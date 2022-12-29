@@ -1,0 +1,102 @@
+ 
+
+*,
+*:before,
+*:after {
+  padding: 10;
+  margin: 10;
+  box-sizing: border-box;
+}
+body {
+  background-color: #121317;
+}
+nav {
+  height: 100vh;
+  width: 70vw;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+a {
+  position: relative;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: #a0a0a0;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+a:before,
+a:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background-color: #ffffff;
+  transition: 0.5s;
+}
+a:after {
+  left: 0;
+  bottom: -10px;
+}
+a:before {
+  right: 0;
+  top: -10px;
+}
+a:hover {
+  color: #ffffff;
+}
+a:hover:after,
+a:hover:before {
+  width: 100%;
+}
+
+margin-top
+
+<style>
+  /* Default styles for all devices */
+  body {
+    font-size: 16px;
+  }
+  /* Styles for devices with a width of 320px or less */
+  @media screen and (max-width: 320px) {
+    body {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<style>
+  body {
+    transform: scale(1);
+    transform-origin: top left;
+  }
+</style>
+
+<!-- Zoom in button -->
+<button onclick="zoomIn()">Zoom In</button>
+
+<!-- Zoom out button -->
+<button onclick="zoomOut()">Zoom Out</button>
+
+<script>
+  function zoomIn() {
+    // Get the current zoom level
+    var zoom = parseFloat(document.body.style.transform.replace('scale(', ''));
+    // Increment the zoom level
+    zoom += 0.1;
+    // Set the zoom level
+    document.body.style.transform = 'scale(' + zoom + ')';
+  }
+
+  function zoomOut() {
+    // Get the current zoom level
+    var zoom = parseFloat(document.body.style.transform.replace('scale(', ''));
+    // Decrement the zoom level
+    zoom -= 0.1;
+    // Set the zoom level
+    document.body.style.transform = 'scale(' + zoom + ')';
+  }
+</script>
